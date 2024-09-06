@@ -1,4 +1,4 @@
-let nameVisita;
+/* let nameVisita;
 let ageVisita;
 let numRrhh = 0;
 let numComp = 0;
@@ -75,3 +75,4 @@ function handleStartIssue() {
     }
   }
 }
+ */

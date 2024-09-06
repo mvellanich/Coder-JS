@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: rgba(4, 66, 45, 0.842)">
+    <section class="seccion">
+      <h1>CONTROL DE INGRESO</h1>
+      <div>
+        <form action="POST" id="formulario">
+          <div>
+            <label for="">Nombre y Apellido</label><br />
+            <input type="text" name="nombre" id="" />
+          </div>
+
+          <div>
+            <label for="">E-Mail </label><br />
+            <input
+              type="email"
+              name="email"
+              id=""
+              placeholder="ejemplo@mail.com"
+            />
+          </div>
+
+          <div>
+            <label for="">A que oficina se dirije </label><br />
+            <select name="tramite" id="">
+              <option value="" disabled selected>
+                Seleccione una opción...
+              </option>
+              <option value="secretaria">Secretaría de Dirección</option>
+              <option value="rrhh">Recursos Humanos</option>
+              <option value="proyectos">Proyectos</option>
+              <option value="teso">Tesoreria</option>
+              <option value="prensa">Prensa</option></select
+            ><br />
+            <br />
+            <button type="submit" value="#">Registrar</button>
+          </div>
+        </form>
+
+        <!-- <button style="border-radius: 10px" id="inicioTramite">
+          INICIAR TRÁMITE
+        </button> -->
+
+        <a href="../pages/index.html" class="botonRegistro">Volver</a>
+      </div>
+    </section>
+    <script defer src="../js/index.js"></script>
+  </body>
+</html>

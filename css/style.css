@@ -1,0 +1,49 @@
+.seccion {
+  width: 60%;
+  margin: 0 auto;
+  padding: 36px;
+  border: 9px solid #abd7ac;
+  border-radius: 10px;
+  box-shadow: 20px 18px 20px 5px rgba(0, 0, 0, 0.1);
+  background-color: #ffffffcf;
+}
+
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  h1 {
+    font-size: 2.5em;
+    text-align: center;
+    color: #2b5f4d;
+  }
+}
+
+#formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.1em;
+  text-align: center;
+  div {
+    padding: 10px;
+  }
+  input {
+    width: 350px;
+    height: 24px;
+    font-size: 17.5px;
+  }
+  select {
+    width: 350px;
+    height: 24px;
+    font-size: 17.5px;
+  }
+}
+
+.botonRegistro {
+  background: #56b156;
+  padding: 7px 6px;
+  border: 1px outset buttonborder;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #ffffff;
+}
