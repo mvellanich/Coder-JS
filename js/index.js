@@ -1,3 +1,44 @@
+let visitantes = [];
+
+function registrarVisita(name, email, oficina) {
+  visitantes.push({ name, email, oficina });
+  // para guardar en localStorage
+  localStorage.setItem("productos", JSON.stringify(visitantes));
+  /* localStorage.setItem("stock", visitantes); */
+  // para actualizar la  lista de stock
+  actualizarLista();
+}
+
+const formulario = document.getElementById("formulario");
+/* const eliminarBtn = document.getElementById("eliminar");
+const verStockBtn = document.getElementById("verStock"); */
+const register = document.getElementById("agregar");
+
+register.addEventListener("click", (e) => {
+  e.preventDefault();
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const oficina = document.getElementById("oficina").value;
+  registrarVisita(name, email, oficina);
+  formulario.reset();
+});
+
+function actualizarLista() {
+  const listaVisita = document.getElementById("registrados");
+  registrados.innerHTML = "";
+  visitantes.forEach((p) => {
+    const li = document.createElement("li");
+    li.textContent =
+      " Nombre y Apellido: " +
+      p.name +
+      " Email: " +
+      p.email +
+      " Oficina a visitar: " +
+      p.oficina;
+    registrados.appendChild(li);
+  });
+}
+
 /* let nameVisita;
 let ageVisita;
 let numRrhh = 0;

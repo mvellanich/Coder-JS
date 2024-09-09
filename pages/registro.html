@@ -10,10 +10,10 @@
     <section class="seccion">
       <h1>CONTROL DE INGRESO</h1>
       <div>
-        <form action="POST" id="formulario">
+        <form action="post" id="formulario">
           <div>
             <label for="">Nombre y Apellido</label><br />
-            <input type="text" name="nombre" id="" />
+            <input type="text" name="nombre" id="name" />
           </div>
 
           <div>
@@ -21,14 +21,14 @@
             <input
               type="email"
               name="email"
-              id=""
+              id="email"
               placeholder="ejemplo@mail.com"
             />
           </div>
 
           <div>
             <label for="">A que oficina se dirije </label><br />
-            <select name="tramite" id="">
+            <select name="tramite" id="oficina">
               <option value="" disabled selected>
                 Seleccione una opción...
               </option>
@@ -39,7 +39,7 @@
               <option value="prensa">Prensa</option></select
             ><br />
             <br />
-            <button type="submit" value="#">Registrar</button>
+            <button id="agregar">Registrar</button>
           </div>
         </form>
 
@@ -49,6 +49,9 @@
 
         <a href="../pages/index.html" class="botonRegistro">Volver</a>
       </div>
+      <div id="registroTotal"></div>
+      <h2 style="text-align: center">Visitantes:</h2>
+      <ul id="registrados"></ul>
     </section>
     <script defer src="../js/index.js"></script>
   </body>
