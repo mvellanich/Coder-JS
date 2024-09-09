@@ -4,14 +4,11 @@ function registrarVisita(name, email, oficina) {
   visitantes.push({ name, email, oficina });
   // para guardar en localStorage
   localStorage.setItem("productos", JSON.stringify(visitantes));
-  /* localStorage.setItem("stock", visitantes); */
-  // para actualizar la  lista de stock
+
   actualizarLista();
 }
 
 const formulario = document.getElementById("formulario");
-/* const eliminarBtn = document.getElementById("eliminar");
-const verStockBtn = document.getElementById("verStock"); */
 const register = document.getElementById("agregar");
 
 register.addEventListener("click", (e) => {
