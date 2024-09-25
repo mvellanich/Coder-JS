@@ -9,59 +9,24 @@
     <title>Document</title>
   </head>
   <body style="background-color: rgba(4, 66, 45, 0.842)">
-    <section class="seccion">
-      <h1>CONTROL DE INGRESO</h1>
-      <div>
-        <form action="post" id="formulario">
-          <div>
-            <label for="">Nombre y Apellido</label><br />
-            <input
-              type="text"
-              name="nombre"
-              id="name"
-              placeholder="Juan Perez"
-            />
-          </div>
+    <h1 class="h1-login">INGRESE USUARIO Y CONTRASEÑA</h1>
+    <div class="seccion">
+      <form id="loginForm" class="formulario-login">
+        <input type="text" id="usuario" placeholder="Usuario" required />
+        <br />
+        <input
+          type="password"
+          id="contraseña"
+          placeholder="Contraseña"
+          required
+        />
+        <br />
 
-          <div>
-            <label for="">E-Mail </label><br />
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="ejemplo@mail.com"
-            />
-          </div>
+        <button type="submit">Iniciar Sesión</button>
+      </form>
+    </div>
 
-          <div>
-            <label for="">A que oficina se dirije </label><br />
-            <select name="tramite" id="oficina">
-              <option value="" disabled selected>
-                Seleccione una opción...
-              </option>
-              <option value="Secretaría de Dirección">
-                Secretaría de Dirección
-              </option>
-              <option value="Recursos Humanos">Recursos Humanos</option>
-              <option value="Proyectos">Proyectos</option>
-              <option value="Tesoreria">Tesoreria</option>
-              <option value="Prensa">Prensa</option></select
-            ><br />
-            <br />
-            <button id="agregar">Registrar</button>
-          </div>
-        </form>
-
-        <!-- <button style="border-radius: 10px" id="inicioTramite">
-          INICIAR TRÁMITE
-        </button> -->
-
-        <a href="../pages/index.html" class="botonRegistro">Volver</a>
-      </div>
-      <div id="registroTotal"></div>
-      <h2 style="text-align: center">Visitantes:</h2>
-      <ul id="registrados"></ul>
-    </section>
-    <script defer src="../js/index.js"></script>
+    <script defer src="../js/login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>

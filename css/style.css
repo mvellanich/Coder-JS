@@ -1,3 +1,11 @@
+.h1-login {
+  font-size: medium;
+  color: white;
+}
+
+.div-form {
+  justify-content: center;
+}
 .seccion {
   width: 60%;
   margin: 0 auto;
@@ -39,6 +47,22 @@ body {
   }
 }
 
+.formulario-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.1em;
+  text-align: center;
+  div {
+    padding: 10px;
+  }
+  input {
+    width: 350px;
+    height: 24px;
+    font-size: 17.5px;
+  }
+}
+
 .botonRegistro {
   background: #56b156;
   padding: 7px 6px;
@@ -50,4 +74,64 @@ body {
 
 li {
   font-weight: 800;
+}
+
+.tabla-centrada {
+  margin: 20px auto;
+  max-width: 1200px;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.tabla-centrada th,
+.tabla-centrada td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.tabla-centrada th {
+  background-color: #f2f2f2;
+}
+
+.tabla-centrada tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Define un ancho fijo para las columnas */
+.tabla-centrada th,
+.tabla-centrada td {
+  width: 25%;
+}
+
+.botoncitos-eliminar {
+  display: block;
+  margin: 10px auto;
+  padding: 8px 12px;
+  background-color: #2b5f4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.botoncitos-eliminar:hover {
+  background-color: #45a049; /* Color en hover */
+}
+
+.botoncito {
+  display: block;
+  margin: 20px auto; /* Centra el botón horizontalmente */
+  padding: 10px 20px;
+  background-color: #2b5f4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.botoncito:hover {
+  background-color: #45a049; /* Color en hover */
 }
