@@ -23,7 +23,7 @@ document
         if (usuarioValido) {
           console.log("Inicio de sesión exitoso");
           Swal.fire({
-            position: "center",
+            position: "center+",
             icon: "success",
             title: "Inicio de sesión exitoso",
             showConfirmButton: false,

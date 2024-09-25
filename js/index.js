@@ -10,7 +10,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Verifica que todos los campos estén completos
     if (nombre === "" || email === "" || oficina === "") {
-      alert("Por favor complete todos los campos");
+      Swal.fire({
+        icon: "warning",
+        title: "Por favor complete todos los campos!",
+      });
+
       return;
     }
 
@@ -47,6 +51,10 @@ function agregarFila(nombre, email, oficina) {
   celdaEmail.textContent = email;
   celdaOficina.textContent = oficina;
 
+  // Ejemplo de uso
+  // Llama a esta función y pasa el ID de la fila que deseas eliminar
+  // confirmarEliminacion('fila-1');
+
   // Crea el botón de eliminar
   const botonEliminar = document.createElement("button");
   botonEliminar.textContent = "Eliminar";
@@ -60,7 +68,6 @@ function agregarFila(nombre, email, oficina) {
   });
   celdaAccion.appendChild(botonEliminar);
 }
-
 function guardarDatos() {
   const filas = document.querySelectorAll("#tabla tbody tr");
 
