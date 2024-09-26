@@ -8,6 +8,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const email = document.getElementById("email").value;
     const oficina = document.getElementById("oficina").value;
 
+    Swal.fire({
+      icon: "success",
+      title: "Registro exitoso",
+      text: "Los datos se han registrado correctamente.",
+    });
+
     // Verifica que todos los campos estén completos
     if (nombre === "" || email === "" || oficina === "") {
       Swal.fire({
@@ -32,6 +38,15 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function agregarFila(nombre, email, oficina) {
+  if (!email.includes("@")) {
+    // Mostrar un mensaje de error si el email no es válido
+    Swal.fire({
+      icon: "error",
+      title: "Dirección de correo no válida",
+      text: "La dirección debe contener @",
+    });
+    return; // Salir de la función para evitar agregar una fila inválida
+  }
   const tabla = document
     .getElementById("tabla")
     .getElementsByTagName("tbody")[0];
@@ -51,24 +66,11 @@ function agregarFila(nombre, email, oficina) {
   celdaEmail.textContent = email;
   celdaOficina.textContent = oficina;
 
-  // Ejemplo de uso
-  // Llama a esta función y pasa el ID de la fila que deseas eliminar
-  // confirmarEliminacion('fila-1');
-
   // Crea el botón de eliminar
   const botonEliminar = document.createElement("button");
   botonEliminar.textContent = "Eliminar";
   botonEliminar.classList.add("botoncitos-eliminar"); // Agregar clase compartida
-  /*  botonEliminar.addEventListener("click", function () {
-    // Elimina la fila actual
-    tabla.deleteRow(nuevaFila.rowIndex - 1); // -1 para ajustar el índice
 
-    // Actualiza el localStorage
-    guardarDatos();
-  });
-  celdaAccion.appendChild(botonEliminar);
-} */
-  // Evento del botón Eliminar con Sweet Alert
   botonEliminar.addEventListener("click", function () {
     Swal.fire({
       title: "¿Estás seguro?",
@@ -120,21 +122,6 @@ function guardarDatos() {
 
   // Guarda los datos en el localStorage como un string JSON
   localStorage.setItem("datosTabla", JSON.stringify(datos));
-}
-
-function cargarDatos() {
-  const datosGuardados = localStorage.getItem("datosTabla");
-
-  // Si hay datos guardados, los convierte de JSON a un array
-  if (datosGuardados) {
-    const datos = JSON.parse(datosGuardados);
-    console.log("Cargando datos desde localStorage:", datos);
-
-    // Recorre el array y agrega cada fila a la tabla
-    datos.forEach((dato) => {
-      agregarFila(dato.nombre, dato.email, dato.oficina);
-    });
-  }
 }
 
 function guardarDatos() {
