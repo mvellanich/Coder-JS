@@ -59,7 +59,7 @@ function agregarFila(nombre, email, oficina) {
   const botonEliminar = document.createElement("button");
   botonEliminar.textContent = "Eliminar";
   botonEliminar.classList.add("botoncitos-eliminar"); // Agregar clase compartida
-  botonEliminar.addEventListener("click", function () {
+  /*  botonEliminar.addEventListener("click", function () {
     // Elimina la fila actual
     tabla.deleteRow(nuevaFila.rowIndex - 1); // -1 para ajustar el índice
 
@@ -67,6 +67,41 @@ function agregarFila(nombre, email, oficina) {
     guardarDatos();
   });
   celdaAccion.appendChild(botonEliminar);
+} */
+  // Evento del botón Eliminar con Sweet Alert
+  botonEliminar.addEventListener("click", function () {
+    Swal.fire({
+      title: "¿Estás seguro?",
+      text: "¡No podrás revertir esto!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Sí, eliminarlo!",
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        tabla.deleteRow(nuevaFila.rowIndex - 1); // Elimina la fila
+        guardarDatos(); // Actualiza localStorage después de eliminar
+        Swal.fire("Eliminado!", "La fila ha sido eliminada.", "success");
+      }
+    });
+  });
+
+  celdaAccion.appendChild(botonEliminar);
+}
+
+// Función para guardar datos en localStorage
+function guardarDatos() {
+  const filas = document.querySelectorAll("#tabla tbody tr");
+  const datos = [];
+  filas.forEach((fila) => {
+    const nombre = fila.cells[0].textContent;
+    const email = fila.cells[1].textContent;
+    const oficina = fila.cells[2].textContent;
+    datos.push({ nombre, email, oficina });
+  });
+  localStorage.setItem("datosTabla", JSON.stringify(datos));
 }
 function guardarDatos() {
   const filas = document.querySelectorAll("#tabla tbody tr");
